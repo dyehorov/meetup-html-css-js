@@ -5,6 +5,27 @@ const upcomingEventsListContainer = document.querySelector(
 const topCategoriesListContainer = document.querySelector(
   ".top-categories-list"
 )
+const isUserAcceptedPrivacy = JSON.parse(
+  localStorage.getItem("isUserAcceptedPrivacy")
+)
+
+const acceptPolicyBtn = document.querySelector(".privacy-accept")
+const rejectPolicyBtn = document.querySelector(".privacy-reject")
+const privacyModal = document.querySelector(".privacy-modal")
+
+if (!isUserAcceptedPrivacy) {
+  privacyModal.classList.add("privacy-modal--shown")
+}
+
+acceptPolicyBtn.addEventListener("click", () => {
+  privacyModal.classList.remove("privacy-modal--shown")
+
+  localStorage.setItem("isUserAcceptedPrivacy", JSON.stringify(true))
+})
+
+rejectPolicyBtn.addEventListener("click", () => {
+  privacyModal.classList.remove("privacy-modal--shown")
+})
 
 window.addEventListener("DOMContentLoaded", () => {
   renderEventCards()
