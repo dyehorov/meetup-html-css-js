@@ -6,13 +6,14 @@
     <link rel="icon" href="../assets/icons/favicon.ico" />
     <link rel="stylesheet" href="../styles/reset.css" />
     <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/events.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="../scripts/script.js" defer></script>
+    <script src="../scripts/events.js" defer></script>
     <title>Meetup</title>
   </head>
   <body>
@@ -53,11 +54,18 @@
         </div>
       </div>
     </header>
-    <main>
+    <main id="main" class="container">
+      <section id="events">
+        <h1 class="events-title">
+          Events near <span class="city">New York, NY</span>
+        </h1>
+        <span>Events</span>
+        <form class="filters"></form>
+        <ul class="events-list-container"></ul>
+      </section>
       <aside class="events-map">
         <h3>Find events near</h3>
         <p>New York, NY</p>
-
         <div class="map">
           <iframe
             src="https://maps.google.com/maps?q=Paris%2C%20France&t=m&z=14&ie=UTF8&iwloc=&output=embed"
@@ -65,7 +73,6 @@
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-
         <button class="map-button">Browse in map</button>
       </aside>
     </main>

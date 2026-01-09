@@ -25,7 +25,7 @@ body {
   padding: 0 24px;
 }
 
-.container:last-child {
+.container:last-child:not(section) {
   margin-bottom: 0;
 }
 
@@ -739,7 +739,7 @@ body {
   }
 
   .how-meetup-item {
-    gap: var(--space-2) a;
+    gap: var(--space-2);
     padding: var(--space-3) var(--space-2);
   }
 
