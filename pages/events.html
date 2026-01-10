@@ -59,9 +59,43 @@
         <h1 class="events-title">
           Events near <span class="city">New York, NY</span>
         </h1>
-        <span>Events</span>
-        <form class="filters"></form>
+        <span class="events-label">Events</span>
+        <form class="filters">
+          <input
+            type="reset"
+            value="Reset filters"
+            class="reset-filter-input hidden"
+          />
+        </form>
         <ul class="events-list-container"></ul>
+        <div class="filter-no-results hidden">
+          <div class="no-results-image">
+            <img
+              src="/assets/images/no-results-avatar/avatar-1v2.webp"
+              alt=""
+            />
+            <img
+              src="/assets/images/no-results-avatar/avatar-2v2.webp"
+              alt=""
+            />
+            <img
+              src="/assets/images/no-results-avatar/avatar-3v2.webp"
+              alt=""
+            />
+            <img
+              src="/assets/images/no-results-avatar/avatar-4v2.webp"
+              alt=""
+            />
+            <span class="no-results-image-number">+76</span>
+          </div>
+          <h3 class="no-results-title">Become an organizer</h3>
+          <p class="no-results-text">
+            Starting a group connects you with passionate people looking to
+            share experiences in real life.
+          </p>
+          <button class="button">Start your first group</button>
+          <span class="reset-filters-btn">Or reset filters</span>
+        </div>
       </section>
       <aside class="events-map">
         <h3>Find events near</h3>

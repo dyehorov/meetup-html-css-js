@@ -6,7 +6,7 @@ export function createFilterOptions(type, options) {
   options.forEach(option => {
     const optionElement = document.createElement("option")
     if (option instanceof Date) {
-      optionElement.value = option.getTime() // number
+      optionElement.value = option.getTime()
       optionElement.textContent = option.toLocaleString("en-US", {
         year: "numeric",
         month: "short",

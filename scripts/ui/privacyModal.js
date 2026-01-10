@@ -7,7 +7,6 @@ export function initPrivacyModal() {
   const rejectPolicyBtn = document.querySelector(".privacy-reject")
   const privacyModal = document.querySelector(".privacy-modal")
 
-  // если модалки нет на странице — выходим
   if (!privacyModal || !acceptPolicyBtn || !rejectPolicyBtn) {
     return
   }

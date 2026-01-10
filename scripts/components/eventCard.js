@@ -2,12 +2,12 @@ export function createEventCard(event) {
   const {
     title,
     category,
-    distanceKm,
+    distance,
     date,
     time,
-    going,
+    attendees,
     price,
-    isOnline,
+    type,
     image,
   } = event
 
@@ -27,25 +27,25 @@ export function createEventCard(event) {
               <div class="event-card__content">
                 <h3 class="event-card__title">${title}</h3>
                 <p class="event-card__category">${getEventCategory(
-                  isOnline,
+                  type,
                   category,
-                  distanceKm
+                  distance
                 )}</p>
                 <div class="event-card__meta">
                   <div class="event-card__date">
-                    <img src="./assets/icons/calendar.svg" alt="Calendar icon" />
-                    <span>${date} · ${time}</span>
+                    <img src="/assets/icons/calendar.svg" alt="Calendar icon" />
+                    <span>${formatDate(date, time)}</span>
                   </div>
                   <div class="event-card__footer">
                     <div class="event-card__going">
                       <img
-                        src="./assets/icons/checkmark.svg"
+                        src="/assets/icons/checkmark.svg"
                         alt="Checkmark icon"
                       />
-                      <span>${going} going</span>
+                      <span>${attendees} going</span>
                     </div>
                     <div class="event-card__price">
-                      <img src="./assets/icons/ticket.svg" alt="Ticket icon" />
+                      <img src="/assets/icons/ticket.svg" alt="Ticket icon" />
                       <span>${price}</span>
                     </div>
                   </div>
@@ -57,10 +57,32 @@ export function createEventCard(event) {
   return li
 }
 
-function getEventCategory(isOnline, category, distanceKm) {
+function getEventCategory(type, category, distance) {
+  const isOnline = type === "online" ? true : false
+
   if (!isOnline) {
-    return `${category} <span>(${distanceKm} km)</span>`
+    return `${category} <span>(${distance} km)</span>`
   }
 
   return category
+}
+
+function formatDate(date, time) {
+  const dateFormat = date.toLocaleString("en-US", {
+    weekday: "short",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  })
+
+  if (time === undefined) {
+    const time = date.toLocaleString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+    })
+
+    return `${dateFormat} · ${time}`
+  }
+
+  return `${dateFormat} · ${time}`
 }

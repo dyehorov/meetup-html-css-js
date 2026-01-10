@@ -25,10 +25,6 @@ body {
   padding: 0 24px;
 }
 
-.container:last-child:not(section) {
-  margin-bottom: 0;
-}
-
 .section-margin-bottom {
   margin-bottom: var(--space-3);
 }
@@ -298,6 +294,7 @@ body {
 
 .event-card__date {
   margin-bottom: var(--space-1);
+  text-transform: uppercase;
 }
 
 .event-card__date,
