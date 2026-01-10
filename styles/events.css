@@ -232,6 +232,7 @@
 
   #events {
     width: 100%;
+    margin-bottom: var(--space-8);
   }
 
   .container {
