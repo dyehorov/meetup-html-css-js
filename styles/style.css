@@ -611,8 +611,9 @@ body {
 
 .footer-bottom {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
   gap: var(--space-3);
   flex-wrap: wrap;
   font-size: var(--fz-14);
