@@ -561,8 +561,14 @@ body {
   border: 2px solid #fff;
   padding: var(--space-1) var(--space-2);
   border-radius: 8px;
-  color: #fff;
+  color: #000;
   font-weight: 500;
+}
+
+#footer .footer-title-btn:hover {
+  background-color: #fff;
+  color: #000;
+  transition-duration: 0.3s;
 }
 
 .footer-divider {
@@ -641,6 +647,10 @@ body {
   display: flex;
   gap: var(--space-2);
   flex-wrap: wrap;
+}
+
+.footer-inner {
+  margin-bottom: 0;
 }
 
 @media (max-width: 1160px) {
@@ -967,6 +977,10 @@ body {
 
   .search__divider {
     display: none;
+  }
+
+  .event-list-item:hover {
+    transform: translateY(0);
   }
 }
 
